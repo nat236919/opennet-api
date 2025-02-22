@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    container_name: "opennet_api"
+    image: opennet-api:latest
+    volumes:
+      - ./app:/app
+    ports:
+      - "80:80"
+    environment:
+      - 'RUN=uvicorn main:app'
